@@ -3,3 +3,35 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+app_about:
+    path: /about
+    controller: App\Controller\AboutController::index
+
+app_blogs:
+    path: /blogs
+    controller: App\Controller\BlogsController::index
+
+app_contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+app_educations:
+    path: /educations
+    controller: App\Controller\EducationsController::index
+
+app_experiences:
+    path: /experiences
+    controller: App\Controller\ExperiencesController::index
+
+app_home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+app_projects:
+    path: /projects
+    controller: App\Controller\ProjectsController::index
+
+app_skills:
+    path: /skills
+    controller: App\Controller\SkillsController::index
