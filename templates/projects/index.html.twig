@@ -1,20 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectsController!{% endblock %}
+{% block title %}Project index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/noureddine/portfilio/src/Controller/ProjectsController.php'|file_link(0) }}">src/Controller/ProjectsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/noureddine/portfilio/templates/projects/index.html.twig'|file_link(0) }}">templates/projects/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h3 class="text-center my-2">Gérer les projets</h3>
+    <a class="btn btn-secondary float-right mb-4" href="{{ path('project_new') }}">Nouveau projet</a>
+    <table class="table table-striped">
+        <thead class="text-center thead-dark">
+            <tr>
+                <th>Position</th>
+                <th>Titre</th>
+                <th>Site</th>
+                <th>Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td class="d-flex flex-row justify-content-between align-items-center">
+                  {{ project.position }}
+                  {{ include('project/_position_up_form.html.twig', {project: project}, with_context = false) }}
+                  {{ include('project/_position_down_form.html.twig', {project: project}, with_context = false) }}
+                </td>
+                <td>{{ project.title }}</td>
+                <td><a href="{{ project.viewLink }}" target="_blank">{{ project.viewLink }}</a></td>
+                <td><a href="{{ project.codeLink }}" target="_blank">{{ project.codeLink }}</a></td>
+                <td class="d-flex align-items-center">
+                    <a href="{{ path('project_edit', {'id': project.id}) }}"><i class="fas fa-edit mx-1"></i></a>
+                    {{ include('project/_delete_form.html.twig', {project: project}, with_context = false) }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Pas de projets en BDD</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
