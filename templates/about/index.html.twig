@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+  <h3 class="text-center my-2">En savoir plus sur moi</h3>
+  <div class="clearfix mb-3">
+    <img class="float-left mr-3" id="bio-image" src="{{asset("img/houda_essid.jpg")}}" alt="photo de Houda ESSID">
+    <h4>Mon profil</h4>
+    <p>Peut-être parce que j'ai débuté la programmation en autodidacte, j'aime transmettre mes connaissances
+      et je prends beaucoup de plaisir à former au développement quand j'en ai l'occasion. Dernièrement, j'ai
+      occupé pendant 3 ans un poste de formateur au cours duquel j'ai pu animer et concevoir des formations développeur
+      web sur PHP, mon langage de prédilection mais aussi sur Python et la data-analyse qui sont deux domaines auxquels je m'intéresse
+      beaucoup. Dans ce cadre j'intervenais sur la production de supports pédagogiques, d'exercices, l'animation d'ateliers de programmation
+      et le suivi des étudiants mais aussi sur le développement d'applications pédagogiques.
+
+      <br><br>J'ai par exemple développé un outil d'évaluation du niveau d'anglais des apprenants sous Django, ou encore
+      une plateforme de e-learning sous Symfony. Ce dernier projet, toujours en développement, me tient à coeur car
+      j'ai moi même bénéficié de beaucoup de ressources libres sur internet, il est normal que j'apporte aujourd'hui ma contribution.
+
+      <br><br>Si jamais vous voulez en savoir plus sur mon parcours et mes expériences, n'hésitez pas à visiter mon profil
+      <a href="" target="_blank">Linkedin</a>.
+      Si c'est le code et les projets qui vous intéressent, alors vous en saurez plus dans la section <a href="{{asset("/")}}">Portfolio</a>
+      et sur mon profil <a href="" target="_blank">GitHub</a>. Aujourd'hui, je suis à la recherche de ma prochaine mission
+      alors si mon profil vous intéresse, que ce soit pour du développement ou de la formation, n'hésitez pas à me <a href="{{asset("/contact")}}">contacter</a>.
+
+      <br><br>Issu à l'origine d'une formation en langues étrangères et management de projets internationaux,
+      j'ai commencé à m'intéresser à la programmation en autodidacte pendant mes études, principalement HTML/CSS et PHP.
+      Coder et créer des sites web m'a très vite passionné car j'y retrouvais un mélange de logique et de créativité.
+      Après avoir réalisé quelques sites bénévolement, j'ai décidé d'en faire mon métier et j'ai suivi une formation
+      intensive à <a href="https://simplon.co/" target="_blank">Simplon Roubaix</a>. Cela m'a permis d'approfondir
+      ma connaissance de la programmation et de découvrir des outils formidables comme Symfony qui ne m'ont plus quitté :-)</p>
+  </div>
+
+{% endblock %}
